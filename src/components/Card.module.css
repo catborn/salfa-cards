@@ -1,0 +1,17 @@
+.card_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: grey;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightslategray;
+  height: 300px;
+  width: 300px;
+  border-radius: 5%;
+  /* margin: 0 auto; */
+}
