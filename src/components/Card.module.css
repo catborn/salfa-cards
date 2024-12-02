@@ -3,15 +3,16 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: grey;
+  background: -webkit-linear-gradient(90deg, #353973, #31206f, #3b096d);
 }
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightslategray;
+  background-color: whitesmoke;
   height: 300px;
   width: 300px;
   border-radius: 5%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
   /* margin: 0 auto; */
 }
