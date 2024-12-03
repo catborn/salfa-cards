@@ -22,7 +22,7 @@ function App() {
       try {
         // Получаем список из 20 случайных собак
         const response = await fetch(
-          "https://dog.ceo/api/breeds/image/random/20"
+          "https://dog.ceo/api/breeds/image/random/21"
         );
         const data = await response.json();
 
