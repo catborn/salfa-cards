@@ -49,3 +49,29 @@ button {
     transform: rotate(360deg);
   }
 }
+
+/* Стили для лоадера */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 20px;
+  color: #1a73e8;
+}
+
+.loader::after {
+  content: "🐕";
+  margin-left: 10px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
