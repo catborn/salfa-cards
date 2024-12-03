@@ -1,3 +1,3 @@
 # Simple cards-app
 
-https://github.com/public-apis/public-apis
+https://dog.ceo/api/breeds/image/random/20

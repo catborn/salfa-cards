@@ -1,10 +1,76 @@
+// function App() {
+//   return (
+//     <div className="App">
+//       <Card />
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import "./App.css";
 import Card from "./components/Card";
 
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setCards,
+  toggleLike,
+  deleteCard,
+  toggleFilter,
+} from "./store/slices/cardsSlice.js";
+
 function App() {
+  const dispatch = useDispatch();
+  const { items, filterActive } = useSelector((state) => state.cards);
+
+  useEffect(() => {
+    const fetchDogs = async () => {
+      try {
+        // Получаем список из 20 случайных собак
+        const response = await fetch(
+          "https://dog.ceo/api/breeds/image/random/20"
+        );
+        const data = await response.json();
+
+        // Преобразуем массив URL в массив объектов с нужными свойствами
+        const dogsWithMetadata = data.message.map((url, index) => ({
+          id: index,
+          imageUrl: url,
+          isLiked: false,
+        }));
+
+        dispatch(setCards(dogsWithMetadata));
+      } catch (error) {
+        console.error("Error fetching dogs:", error);
+      }
+    };
+
+    fetchDogs();
+  }, [dispatch]);
+
+  const displayedCards = filterActive
+    ? items.filter((card) => card.isLiked)
+    : items;
+
   return (
     <div className="App">
-      <Card />
+      <button onClick={() => dispatch(toggleFilter())}>
+        {filterActive ? "Show All" : "Show Liked"}
+      </button>
+
+      <div className="cards-grid">
+        {displayedCards.map((card) => (
+          <Card
+            key={card.id}
+            id={card.id}
+            imageUrl={card.imageUrl}
+            isLiked={card.isLiked}
+            onLike={(id) => dispatch(toggleLike(id))}
+            onDelete={(id) => dispatch(deleteCard(id))}
+          />
+        ))}
+      </div>
     </div>
   );
 }

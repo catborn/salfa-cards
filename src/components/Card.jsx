@@ -1,11 +1,19 @@
 import React from "react";
 import styles from "./Card.module.css";
 
-function Card() {
+const Card = ({ id, imageUrl, isLiked, onLike, onDelete }) => {
   return (
-    <div>
-      <div className={styles.card}>Card</div>
+    <div className={styles.card}>
+      <img
+        src={imageUrl}
+        alt="Dog"
+        style={{ width: "200px", height: "200px", objectFit: "cover" }}
+      />
+      <div className="card-buttons">
+        <button onClick={() => onLike(id)}>{isLiked ? "❤️" : "🤍"}</button>
+        <button onClick={() => onDelete(id)}>❌</button>
+      </div>
     </div>
   );
-}
+};
 export default Card;
