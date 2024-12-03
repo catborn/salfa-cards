@@ -1,3 +1,3 @@
 # Simple cards-app
 
-https://dog.ceo/api/breeds/image/random/20
+Dog pictures API - https://dog.ceo/dog-api/
