@@ -4,8 +4,21 @@
   /* display: flex;
   justify-content: center;
   align-items: center;*/
-  height: 100%;
+  min-height: 100vh;
   background: -webkit-linear-gradient(90deg, #353973, #31206f, #3b096d);
+  padding: 15px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* автоматическое размещение карточек */
+  gap: 20px; /* отступы между карточками */
+  max-width: 1200px; /* максимальная ширина контейнера */
+  margin: 0 auto;
+  padding: 20px;
 }
 
 button {
@@ -13,10 +26,24 @@ button {
   /* border-radius: 2px; */
   background: transparent;
   color: whitesmoke;
+  margin: 10px;
 }
 
 button:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
+}
+
+.filter-button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+img {
+  border-radius: 10px;
 }
 
 .App-logo {

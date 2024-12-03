@@ -1,13 +1,3 @@
-// function App() {
-//   return (
-//     <div className="App">
-//       <Card />
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import "./App.css";
 import Card from "./components/Card";
 
@@ -61,7 +51,10 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={() => dispatch(toggleFilter())}>
+      <button
+        className="filter-button"
+        onClick={() => dispatch(toggleFilter())}
+      >
         {filterActive ? "Show All" : "Show Liked"}
       </button>
       {/* Добавляем загрузку */}
