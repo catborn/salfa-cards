@@ -1,6 +1,6 @@
 # Simple cards-app
 
-## https://catborn.github.io/salfa-cards/
+## 👉 https://catborn.github.io/salfa-cards/ ✨
 
 ℹ️ Please note: You may need a VPN to view this site
 
