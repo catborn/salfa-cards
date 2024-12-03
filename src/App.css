@@ -3,15 +3,16 @@
   /* display: flex; */
   /* display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh; */
+  align-items: center;*/
+  height: 100%;
   background: -webkit-linear-gradient(90deg, #353973, #31206f, #3b096d);
 }
 
 button {
   border: 0;
-  border-radius: 2px;
-  /* background-color: #3b096d; */
+  /* border-radius: 2px; */
+  background: transparent;
+  color: whitesmoke;
 }
 
 .App-logo {
