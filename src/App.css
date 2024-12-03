@@ -8,6 +8,12 @@
   background: -webkit-linear-gradient(90deg, #353973, #31206f, #3b096d);
 }
 
+button {
+  border: 0;
+  border-radius: 2px;
+  /* background-color: #3b096d; */
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
