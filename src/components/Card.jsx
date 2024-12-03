@@ -3,7 +3,7 @@ import styles from "./Card.module.css";
 
 function Card() {
   return (
-    <div className={styles.card_container}>
+    <div>
       <div className={styles.card}>Card</div>
     </div>
   );
