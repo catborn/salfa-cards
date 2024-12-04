@@ -7,7 +7,7 @@ const Card = ({ id, imageUrl, isLiked, onLike, onDelete }) => {
       <img
         src={imageUrl}
         alt="Dog"
-        style={{ width: "200px", height: "200px", objectFit: "cover" }}
+        // style={{ width: "200px", height: "200px", objectFit: "cover" }}
       />
       <div className="card-buttons">
         <button onClick={() => onLike(id)}>{isLiked ? "❤️" : "🖤"}</button>
