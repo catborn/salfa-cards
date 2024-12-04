@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+// Функция createSlice созд объект slice, кот содержит имя (name), начальное состояние (initialState) и набор редукторов (reducers)
 const cardsSlice = createSlice({
   name: "cards",
   initialState: {
@@ -29,9 +29,13 @@ const cardsSlice = createSlice({
   },
 });
 
-// Экспортируем actions
+// Экспортируем actions, действия
 export const { setCards, toggleLike, deleteCard, toggleFilter } =
   cardsSlice.actions;
 
-// Экспортируем reducer
+// Экспортируем reducer, редукторы
 export default cardsSlice.reducer;
+
+// имя среза cards, items - пустой массив - список карточек, filterActive - состояние фильтра
+// редукторы определяют: setCards - уст новый массив карточек в состоянии, toggleLike - находит карточку по id и перекл ей свойство isLiked
+// deleteCard - удал карточку с указ id из массива, toggleFilter - перекл сост фильтра между true и false
