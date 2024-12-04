@@ -8,7 +8,7 @@ import { store } from "./store/store"; // импорт стора
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}> // обёртка компонента
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>
