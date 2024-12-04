@@ -57,7 +57,7 @@ function App() {
       >
         {filterActive ? "Show All" : "Show Liked"}
       </button>
-      {/* Добавляем загрузку */}
+      {/* Визуализируем загрузку */}
       {isLoading ? (
         <div className="loader">Loading dogs...</div>
       ) : (
@@ -68,8 +68,8 @@ function App() {
               id={card.id}
               imageUrl={card.imageUrl}
               isLiked={card.isLiked}
-              onLike={(id) => dispatch(toggleLike(id))}
-              onDelete={(id) => dispatch(deleteCard(id))}
+              onLike={(id) => dispatch(toggleLike(id))} //отправка действий в стор
+              onDelete={(id) => dispatch(deleteCard(id))} // отправка действий в стор
             />
           ))}
         </div>
