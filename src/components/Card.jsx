@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Card.module.css";
-
+// Пропсы: id, url картинки, флаг реакции, функции лайк и удалить карточку. Отрисовка компонента
 const Card = ({ id, imageUrl, isLiked, onLike, onDelete }) => {
   return (
     <div className={styles.card}>
