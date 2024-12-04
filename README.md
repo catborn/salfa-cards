@@ -1,6 +1,5 @@
-# Simple cards-app
 
-## 👉 [Dog Cards Gallery](https://catborn.github.io/salfa-cards/) ✨
+# 👉 [Dog Cards Gallery](https://catborn.github.io/salfa-cards/) ✨
 
 ℹ️ Please note: You may need a VPN to view this site
 
