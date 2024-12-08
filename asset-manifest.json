@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/salfa-cards/static/css/main.5b84680b.css",
-    "main.js": "/salfa-cards/static/js/main.cc476774.js",
+    "main.js": "/salfa-cards/static/js/main.8df0ea6d.js",
     "index.html": "/salfa-cards/index.html",
     "main.5b84680b.css.map": "/salfa-cards/static/css/main.5b84680b.css.map",
-    "main.cc476774.js.map": "/salfa-cards/static/js/main.cc476774.js.map"
+    "main.8df0ea6d.js.map": "/salfa-cards/static/js/main.8df0ea6d.js.map"
   },
   "entrypoints": [
     "static/css/main.5b84680b.css",
-    "static/js/main.cc476774.js"
+    "static/js/main.8df0ea6d.js"
   ]
 }
