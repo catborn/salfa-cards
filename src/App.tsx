@@ -1,20 +1,30 @@
 import "./App.css"; //стили
 import Card from "./components/Card"; // компонент
 
-import { useEffect, useState } from "react";  //хуки реакт
-import { useDispatch, useSelector } from "react-redux"; //хуки redax
+import { useEffect, useState } from "react"; //хуки реакт
+// import { useDispatch, useSelector } from "react-redux"; //хуки redax
 import {
   setCards,
   toggleLike,
   deleteCard,
   toggleFilter,
-} from "./store/slices/cardsSlice.js"; //импорт действия управления состоянием карточек
+} from "./store/slices/cardsSlice"; //импорт действия управления состоянием карточек
+import { useAppDispatch, useAppSelector, RootState } from "./store/store"; // типы для Redux store
+
+// Интерфейс для карточки собаки
+interface DogCard {
+  id: number;
+  imageUrl: string;
+  isLiked: boolean;
+}
 
 function App() {
-  const dispatch = useDispatch(); // функция отправки действий в Redux Store
-  const { items, filterActive } = useSelector((state) => state.cards); // извлечение значений из стора useSelector'ом
+  const dispatch = useAppDispatch(); // типизированная функция отправки действий в Redux Store
+  const { items, filterActive } = useAppSelector(
+    (state: RootState) => state.cards
+  ); // типизированное извлечение значений из стора
   // Добавляем лоадер
-  const [isLoading, setIsLoading] = useState(true); //статус загрузки данных
+  const [isLoading, setIsLoading] = useState<boolean>(true); //типизированный статус загрузки данных
 
   useEffect(() => {
     const fetchDogs = async () => {
@@ -24,10 +34,10 @@ function App() {
         const response = await fetch(
           "https://dog.ceo/api/breeds/image/random/21"
         );
-        const data = await response.json();
+        const data: { message: string[] } = await response.json(); // типизация ответа API
 
         // Преобразуем массив URL в массив объектов с нужными свойствами
-        const dogsWithMetadata = data.message.map((url, index) => ({
+        const dogsWithMetadata: DogCard[] = data.message.map((url, index) => ({
           id: index,
           imageUrl: url,
           isLiked: false,
@@ -44,9 +54,10 @@ function App() {
 
     fetchDogs();
   }, [dispatch]);
-// Фильтр
+
+  // Фильтр
   const displayedCards = filterActive
-    ? items.filter((card) => card.isLiked)
+    ? items.filter((card: DogCard) => card.isLiked)
     : items;
 
   return (
@@ -62,14 +73,14 @@ function App() {
         <div className="loader">Loading dogs...</div>
       ) : (
         <div className="cards-grid">
-          {displayedCards.map((card) => (
+          {displayedCards.map((card: DogCard) => (
             <Card
               key={card.id}
               id={card.id}
               imageUrl={card.imageUrl}
               isLiked={card.isLiked}
-              onLike={(id) => dispatch(toggleLike(id))} //отправка действий в стор
-              onDelete={(id) => dispatch(deleteCard(id))} // отправка действий в стор
+              onLike={(id: number) => dispatch(toggleLike(id))} //типизированная отправка действий в стор
+              onDelete={(id: number) => dispatch(deleteCard(id))} //типизированная отправка действий в стор
             />
           ))}
         </div>
@@ -77,5 +88,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

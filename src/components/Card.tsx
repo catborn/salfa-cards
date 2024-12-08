@@ -1,7 +1,23 @@
 import React from "react";
 import styles from "./Card.module.css";
+
+// Интерфейс для пропсов компонента Card
+interface CardProps {
+  id: number;
+  imageUrl: string;
+  isLiked: boolean;
+  onLike: (id: number) => void;
+  onDelete: (id: number) => void;
+}
+
 // Пропсы: id, url картинки, флаг реакции, функции лайк и удалить карточку. Отрисовка компонента
-const Card = ({ id, imageUrl, isLiked, onLike, onDelete }) => {
+const Card: React.FC<CardProps> = ({
+  id,
+  imageUrl,
+  isLiked,
+  onLike,
+  onDelete,
+}) => {
   return (
     <div className={styles.card}>
       <img

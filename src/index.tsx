@@ -5,7 +5,11 @@ import App from "./App";
 import { Provider } from "react-redux"; //импорт провайдера для всех вложенных компонентов
 import { store } from "./store/store"; // импорт стора
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+// Добавляем типизацию для корневого элемента
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
