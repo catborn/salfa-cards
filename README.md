@@ -3,7 +3,7 @@
 
 ℹ️ Please note: You may need a VPN to view this site
 
-🐩 Inspiared by dog pictures API - https://dog.ceo/dog-api/
+🐩 React | TypeScript | Redux | Inspiared by dog pictures API - https://dog.ceo/dog-api/ 
 
 ## You can see photos of dogs
 ![Безымянный](https://github.com/user-attachments/assets/eab07d11-9e70-4c58-a7f9-5b30fa2afcef)
